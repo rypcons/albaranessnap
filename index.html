@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlbaránSnap AI - Automatización de Tickets y Albaranes por WhatsApp</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- NAVEGACIÓN -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/30">
+                    <i class="fa-solid fa-bolt text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">AlbaránSnap <span class="text-brand-600 font-extrabold">AI</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#solucion" class="hover:text-brand-600 transition-colors">Solución</a>
+                <a href="#como-funciona" class="hover:text-brand-600 transition-colors">Cómo Funciona</a>
+                <a href="#doble-validacion" class="hover:text-brand-600 transition-colors">Doble Validación</a>
+                <a href="#sectores" class="hover:text-brand-600 transition-colors">Sectores</a>
+            </nav>
+            <div>
+                <a href="#contacto" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-slate-900 hover:bg-brand-600 text-white font-medium transition-all shadow-md hover:shadow-lg">
+                    <span>Contactar</span>
+                    <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 1: HERO IMPACTANTE -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-slate-900 text-white">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span>Fase I - Metodología AI-T.H.I.N.K.</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Adiós a picar albaranes a mano. <br class="hidden sm:block">
+                        <span class="bg-gradient-to-r from-brand-400 to-emerald-200 bg-clip-text text-transparent">Un mensaje de WhatsApp y listo.</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Elimina las horas perdidas los fines de semana registrando tickets de combustible, compras en obras o entregas de mercancía. Envía una foto al terminar la jornada y nuestra IA multimodal los concilia en tu Excel o ERP al instante.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-lg transition-all shadow-lg shadow-brand-500/30 hover:scale-105 flex items-center justify-center space-x-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Probar en WhatsApp</span>
+                        </a>
+                        <a href="#como-funciona" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition-all flex items-center justify-center">
+                            <span>Ver cómo funciona</span>
+                        </a>
+                    </div>
+
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">100%</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Sin instalar Apps</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-brand-400">&lt; 10 seg</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Por documento</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">0 Errores</p>
+                            <p class="text-xs sm:text-sm text-slate-400">Doble validación</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen decorativa Hero -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 group">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Profesional usando teléfono móvil en el trabajo" class="w-full h-[480px] object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 shadow-xl space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="text-xs font-semibold text-slate-300">Asistente AlbaránSnap AI</span>
+                            </div>
+                            <p class="text-xs text-slate-200">📸 <i>Foto recibida: 3 albaranes detectados.</i></p>
+                            <div class="p-2 bg-slate-800/80 rounded border border-slate-700 text-xs text-brand-300 font-mono">
+                                ✓ Obra Madrid Norte - Materiales: 340,50€<br>
+                                ✓ Combustible Furgoneta: 65,00€<br>
+                                <b>Sincronizado con Excel de Costes.</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: EL PROBLEMA vs NUESTRA SOLUCIÓN -->
+    <section id="solucion" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest">El Problema</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">¿Sigues perdiendo las tardes del viernes repasando facturas y tiques?</p>
+                <p class="text-slate-600 text-lg">La entrada manual de albaranes y facturas genera cuellos de botella en la administración de PyMEs y frustración en los trabajadores de campo.</p>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="p-8 rounded-2xl bg-red-50/50 border border-red-100 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">El Proceso Tradicional (Ineficiente)</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-circle-exclamation text-red-500 mt-1 mr-3"></i> Tiques arrugados o borrados en la guantera y casetas de obra.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-exclamation text-red-500 mt-1 mr-3"></i> Horas picando datos manualmente a hojas de cálculo Excel.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-exclamation text-red-500 mt-1 mr-3"></i> Errores de facturación, descuadres de stock y retenciones mal calculadas.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-exclamation text-red-500 mt-1 mr-3"></i> Caos de recepción al cierre trimestral con el gestor o asesor contable.</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-brand-50/50 border border-brand-100 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Con AlbaránSnap AI (Automatizado)</h3>
+                    <ul class="space-y-3 text-slate-700 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-brand-600 mt-1 mr-3"></i> Envío instantáneo por WhatsApp con una simple foto al terminar la jornada.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-brand-600 mt-1 mr-3"></i> IA Multimodal que lee proveedores, conceptos, cantidades e IVA sin fallo.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-brand-600 mt-1 mr-3"></i> Asignación automática por obra, proyecto o tipo de gasto.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-brand-600 mt-1 mr-3"></i> Sincronización automática con tu software de contabilidad o Hojas de Cálculo.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: CÓMO FUNCIONA -->
+    <section id="como-funciona" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest">Simplicidad Máxima</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">4 Pasos para digitalizar tu jornada</p>
+                <p class="text-slate-600">Sin descargas complicadas ni aprendizaje. Diseñado para usarse en la calle o en la oficina.</p>
+            </div>
+
+            <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center mb-4">1</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Recordatorio Automático</h4>
+                    <p class="text-sm text-slate-600">Al final del turno, el sistema lanza una notificación o mensaje solicitando los documentos del día.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center mb-4">2</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Captura en Lote</h4>
+                    <p class="text-sm text-slate-600">Tomas una foto a los albaranes sobre la mesa o el salpicadero y los envías a WhatsApp o mediante la app.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center mb-4">3</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Procesamiento IA</h4>
+                    <p class="text-sm text-slate-600">Nuestra IA lee y estructura cada concepto, importe y proveedor en segundos de forma automática.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center mb-4">4</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Sincronización Directa</h4>
+                    <p class="text-sm text-slate-600">Los registros validados van directo a tu Excel, Google Sheets o sistema de control de costes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: SISTEMA DE DOBLE VALIDACIÓN -->
+    <section id="doble-validacion" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-sm font-medium">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Garantía de Precisión Total</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+                        Sistema de Doble Validación Human-in-the-Loop
+                    </h2>
+                    <p class="text-slate-300 font-light leading-relaxed">
+                        Combinamos la velocidad de la Inteligencia Artificial con la seguridad del control humano en dos niveles para evitar cualquier tipo de fallo en tu contabilidad:
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold shrink-0 mt-1">1</div>
+                            <div>
+                                <h4 class="font-bold text-white">Validación 1: Emisor en Movilidad</h4>
+                                <p class="text-xs text-slate-400 mt-1">El trabajador de campo confirma en segundos desde su móvil que los importes y la obra asignada son correctos.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0 mt-1">2</div>
+                            <div>
+                                <h4 class="font-bold text-white">Validación 2: Control Contable / Administración</h4>
+                                <p class="text-xs text-slate-400 mt-1">El responsable contable o la gestoría da la aprobación final antes del volcado definitivo en el sistema fiscal o ERP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-gradient-to-tr from-slate-800 to-slate-800/50 p-8 rounded-3xl border border-slate-700 space-y-6">
+                        <h3 class="text-xl font-bold text-brand-400 flex items-center space-x-2">
+                            <i class="fa-solid fa-check-double"></i>
+                            <span>¿Por qué este sistema no falla?</span>
+                        </h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            A diferencia de los programas OCR tradicionales que vuelcan datos con errores de lectura sin avisar, AlbaránSnap AI crea una trazabilidad completa donde cada dato es verificado rápidamente por las personas involucradas.
+                        </p>
+                        <div class="p-4 bg-slate-900/90 rounded-xl border border-slate-700 text-xs text-slate-400 space-y-2 font-mono">
+                            <p class="text-slate-200 font-bold">Historial de Auditoría:</p>
+                            <p>🟢 Captura IA: 100% Legible</p>
+                            <p>🟢 Ok Trabajador: Carlos R. (Obra Madrid - 19:02h)</p>
+                            <p>🟢 Ok Contable: Marta F. (Administración - 19:15h)</p>
+                            <p class="text-brand-400 font-bold">➔ Sincronizado en Excel de Costes</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: CASOS DE USO / SECTORES CON LAS IMÁGENES CORREGIDAS -->
+    <section id="sectores" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest">Adaptable a tu Trabajo</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">Diseñado para profesionales fuera de oficina</p>
+                <p class="text-slate-600">Potenciamos la gestión de empresas en movilidad y entornos exigentes.</p>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1: Construcción (Foto 1) -->
+                <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="h-48 overflow-hidden relative">
+                        <!-- Usa foto-obra.jpg si la descargas a tu carpeta, o esta URL directa -->
+                        <img src="https://drive.google.com/file/d/1EOw7Y7vFuHChmAhxH-KECdpiP3NAeV-8/view?usp=sharing?auto=format&fit=crop&w=800&q=80" alt="Mujer trabajando en construcción con casco y móvil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='foto-obra.jpg'">
+                        <div class="absolute inset-0 bg-slate-900/30"></div>
+                        <span class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">Obras y Reformas</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-slate-900">Encargados de Obra e Instaladores</h3>
+                        <p class="text-sm text-slate-600">Captura albaranes de ferretería, cementos o suministros a pie de obra y conéctalos directamente con el control de costes del proyecto.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Transporte (Foto 2) -->
+                <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="h-48 overflow-hidden relative">
+                        <!-- Usa foto-camion.jpg si la descargas a tu carpeta, o esta URL directa -->
+                        <img src="https://drive.google.com/file/d/1zhuiqscLMX5ms7x-Z3gLIXuoczuNWmMh/view?usp=sharing?auto=format&fit=crop&w=800&q=80" alt="Conductor de camión revisando documentación" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='foto-camion.jpg'">
+                        <div class="absolute inset-0 bg-slate-900/30"></div>
+                        <span class="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full">Transporte y Logística</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-slate-900">Transportistas y Repartidores</h3>
+                        <p class="text-sm text-slate-600">Fotografía tiques de gasolina, dietas y peajes desde la cabina del camión al hacer una parada o al terminar el turno de ruta.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Servicios de Campo (Foto 3) -->
+                <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="h-48 overflow-hidden relative">
+                        <!-- Usa foto-campo.jpg si la descargas a tu carpeta, o esta URL directa -->
+                        <img src="https://drive.google.com/file/d/1pKjyPJfxv6YkKxKKzdEqcvWfqwOQMn1p/view?usp=sharing?auto=format&fit=crop&w=800&q=80" alt="Hombre usando tablet o móvil en el campo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='foto-campo.jpg'">
+                        <div class="absolute inset-0 bg-slate-900/30"></div>
+                        <span class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">Servicios de Campo</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-slate-900">Técnicos de Campo y Mantenimiento</h3>
+                        <p class="text-sm text-slate-600">Agiliza la entrada de recibos de compra de repuestos en almacenes externos asociándolos inmediatamente al cliente final.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: PUNTO DE CONTACTO -->
+    <section id="contacto" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-sm font-medium">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contacto Directo</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                ¿Quieres validar este piloto en tu empresa?
+            </h2>
+
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+                Estamos implementando este prototipo como parte del ejercicio de innovación <b>AI-T.H.I.N.K.</b> Ponte en contacto directo con nuestro equipo de desarrollo para solicitar una demostración o probar el bot de WhatsApp en tu negocio.
+            </p>
+
+            <div class="pt-4 inline-block">
+                <div class="p-6 rounded-2xl bg-slate-800 border border-slate-700 shadow-xl flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <div class="w-12 h-12 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <div class="text-center sm:text-left">
+                        <p class="text-xs uppercase text-slate-400 font-semibold tracking-wider">Correo de atención e información</p>
+                        <a href="mailto:rypcons.it@gmail.com" class="text-xl sm:text-2xl font-bold text-brand-400 hover:underline">
+                            rypcons.it@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 pt-4">
+                Respondemos en menos de 24 horas. Proyecto desarrollado bajo la metodología de innovación AI-T.H.I.N.K.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-white">AlbaránSnap AI</span>
+                <span>© 2026 - Todos los derechos reservados</span>
+            </div>
+            <div class="text-xs text-slate-500">
+                Fase I (IMPLEMENT) - Ejercicio de Innovación con Inteligencia Artificial
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
